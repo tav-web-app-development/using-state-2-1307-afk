@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product , addToCart}) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showDescription, setShowDescription] = useState(false);
   const [itemsInCart, setItemsInCart] = useState(0);
 
   const handleAddToCartClick = () => {
     setItemsInCart(itemsInCart + 1);
-    alert(`you added ${itemsInCart + 1}`);
+    addToCart();
   };
   return (
     <>
@@ -39,7 +39,7 @@ export default function ProductCard({ product }) {
 
       <button onClick={handleAddToCartClick}>Add to Cart</button>
 
-      <div>You order this item {itemsInCart} times</div>
+      
       {!product.isInStock && "The product is out of stock"}
     </>
   );

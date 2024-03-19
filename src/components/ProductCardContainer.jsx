@@ -1,8 +1,8 @@
 import ProductCard from "./ProductCard";
 
-export default function ProductCardContainer({ products }) {
+export default function ProductCardContainer({ products, addToCart }) {
   const productsJsx = products.map((product) => (
-    <ProductCard key={product.id} product={product} />
+    <ProductCard key={product.id} product={product} addToCart={addToCart}/>
   ));
   return (
     <>
